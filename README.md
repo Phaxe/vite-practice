@@ -1,54 +1,101 @@
-# React + TypeScript + Vite
+Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simplified Admin Dashboard for managing investment portfolios. It provides an intuitive interface for tracking total investments, average ROI, and ROI trends over time. The dashboard is built with modern front-end technologies to ensure high performance, scalability, and a smooth user experience.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📊 Investment Table – Displays a list of investments with key details.
 
-## Expanding the ESLint configuration
+📈 ROI Trend Line Chart – Shows the performance of investments over time.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🌍 Internationalization (i18n) – Supports both English (LTR) and Arabic (RTL).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+🎨 Responsive UI – Built with Tailwind CSS and ShadCN UI components.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🔄 State Management – Powered by Redux Toolkit for efficient data handling.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+⚡ Form Handling & Validation – Uses React Hook Form + Yup for seamless form submissions.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+🔍 Server-Side Data Fetching – Investment data is fetched and managed using RTK Query.
+
+Tech Stack
+
+The project is built with the following technologies:
+
+Technology
+
+Purpose
+
+React 19 + Vite
+
+Frontend framework for building the UI
+
+TypeScript
+
+Strongly typed JavaScript for better reliability
+
+Redux Toolkit + RTK Query
+
+State management and data fetching
+
+Tailwind CSS + ShadCN
+
+Styling and UI components
+
+React Hook Form + Yup
+
+Form validation and handling
+
+Recharts
+
+Data visualization for ROI trends
+
+i18next
+
+Internationalization (i18n) support
+
+Folder Structure
+
+src/
+├── components/       # UI components & reusable elements
+│   ├── ui/          # ShadCN UI components
+│   ├── ...
+├── lib/             # Utility functions & TypeScript types
+│   ├── types.ts
+│   ├── utils.ts
+├── pages/           # Page components (Dashboard, Investment Table)
+│   ├── dashboard.tsx
+│   ├── investmenttable.tsx
+├── redux/           # State management
+│   ├── store.ts
+│   ├── slices/      # API & feature slices
+│       ├── investmentApi.ts
+
+Installation & Setup
+
+Follow these steps to run the project locally:
+
+Clone the repository:
+
+git clone <your-repo-url>
+cd <project-folder>
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
+npm run dev
+
+Visit the app: Open http://localhost:5173 in your browser.
+
+MockAPI.io Note
+
+This project uses MockAPI.io for backend data storage. Please note:
+
+When adding a new investment, MockAPI.io replaces the existing data instead of preserving all previous entries.
+
+File uploads are not supported by MockAPI.io. While the file upload functionality is implemented in the code, it has been made optional to ensure smooth usage.
+
+GitHub Repository: https://github.com/Phaxe/vite-practice
