@@ -1,0 +1,18 @@
+{
+    "welcome": "مرحبًا بك في لوحة التحكم",
+    "dashboard": "لوحة التحكم",
+    "investment_table": "جدول الأستثمار",
+    "language": "اللغة",
+    "toggle_language": "التبديل إلى الإنجليزية",
+    "home" :"الرئيسية",
+    "invest_table":"جدول الأستثمار",
+    "add-investment": "اضف أستثمار",
+    "investmentname":"أسم الأستثمار",
+    "amount":"المبلغ",
+    "roi":"العائد",
+    "actions":"أجراء",
+    "total-investments":"كجكوع الأستثمارات",
+    "average-roi":"متوسط العائد",
+    "roi-trends":"اتجاه العائد على الأستثمار"
+  }
+  

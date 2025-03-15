@@ -1,0 +1,18 @@
+{
+    "welcome": "Welcome to the Dashboard",
+    "dashboard": "Dashboard",
+    "investment_table": "Investment Table",
+    "language": "Language",
+    "toggle_language": "Switch to Arabic",
+     "home" :"Home",
+     "invest_table":"Investment Table",
+     "add-investment": "Add Investment",
+     "investmentname":"Investment Name",
+     "amount":"Amount",
+     "roi":"ROI",
+     "actions":"Actions",
+     "total-investments":"Total Investments",
+     "average-roi":"Average ROI",
+     "roi-trends":"ROI Trends"
+  }
+  
