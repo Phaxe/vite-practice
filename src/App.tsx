@@ -21,7 +21,7 @@ const App = () => {
         </ul>
 
         <Button asChild className="mt-4">
-          <a href="YOUR_GITHUB_REPO" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Phaxe/vite-practice" target="_blank" rel="noopener noreferrer">
             View on GitHub
           </a>
         </Button>
