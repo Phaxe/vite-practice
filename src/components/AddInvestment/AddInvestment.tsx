@@ -43,20 +43,23 @@ export default function AddInvestmentModal() {
  
   const onSubmit = async (data: InvestmentFormData) => {
     try {
-      const formData = new FormData();
-      formData.append("name", data.name);
-      formData.append("amount", data.amount.toString());
-      if (file) formData.append("document", file);
-
-      await addInvestment(formData).unwrap();
+      const payload = {
+        name: data.name,
+        amount: data.amount,
+        document: file || null, // Handle file separately if API requires it
+      };
+  
+      await addInvestment(payload).unwrap();
       alert("Investment added successfully!");
+  
       reset(); // Reset form
-      setFile(null); // Reset file
+      setFile(null); // Reset file state
       setOpen(false); // Close modal
     } catch (error) {
       console.error("Failed to add investment", error);
     }
   };
+  
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
