@@ -1,4 +1,3 @@
-// Investment Interface
 export interface Investment {
     id: number;
     name: string;

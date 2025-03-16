@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import expensesReducer from "./Slices/investmentSlice";
 import { investmentApi } from "./Slices/investmentApi";
 
 export const store = configureStore({
   reducer: {
-    // expenses: expensesReducer,
+  
     [investmentApi.reducerPath]: investmentApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
