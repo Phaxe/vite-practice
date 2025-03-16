@@ -2,7 +2,7 @@ import { Button } from "../src/components/ui/button";
 
 const App = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center bg-gray-100 dark:bg-gray-900">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center  dark:bg-gray-900">
       <div className="max-w-2xl bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg space-y-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Investment Dashboard</h1>
         <p className="text-gray-700 dark:text-gray-300">
