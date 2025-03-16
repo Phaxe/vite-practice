@@ -20,8 +20,8 @@ import { useTranslation } from "react-i18next";
 export default function InvestmentTable() {
   const { data: investments, error, isLoading } = useGetInvestmentsQuery({});
   const [deleteInvestment] = useDeleteInvestmentMutation();
-  const { t, i18n } = useTranslation();
-  const isRTL = i18n.language === "ar"; // Check if Arabic
+  const { t } = useTranslation();
+
 
   const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this investment?")) {
@@ -81,12 +81,10 @@ export default function InvestmentTable() {
                     {investment.name}
                   </TableCell>
                   <TableCell className="p-4">
-                    {" "}
-                    {isRTL ? `${investment.amount} $` : `${investment.amount} $`}
+                    {investment.amount} $
                   </TableCell>
                   <TableCell className="p-4">
-                    {" "}
-                    {isRTL ? ` ${investment.roi} %` : `${investment.roi}%`}
+                {investment.roi}%
                   </TableCell>
                   <TableCell className="p-4">
                     <Button
