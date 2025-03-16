@@ -6,7 +6,7 @@ export const investmentApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_BASE_URL 
     ,
     prepareHeaders: (headers) => {
-      headers.set("Content-Type", "application/json");
+      headers.set("Accept", "application/json");
       return headers;
     },
   }),
@@ -19,13 +19,32 @@ export const investmentApi = createApi({
       providesTags: (result) => 
         result ? [{ type: "Investments", id: "LIST" }] : [],
     }),
-    addInvestment: builder.mutation<Investment,InvestmentFormData >({
-      query: (investmentData) => ({ 
-        url: "/investment",
-        method: "POST",
-        body: investmentData,
-      }),
-      invalidatesTags: [{ type: "Investments", id: "LIST" }] // ✅ Triggers refetch after mutation
+
+    addInvestment: builder.mutation<Investment, InvestmentFormData>({
+      query: ({ name, amount, document }) => {
+        // If a file is included, use FormData
+        if (document) {
+          const formData = new FormData();
+          formData.append("name", name);
+          formData.append("amount", amount.toString());
+          formData.append("document", document); // File upload
+
+          return {
+            url: "/investment",
+            method: "POST",
+            body: formData,
+          };
+        }
+
+        // If no file, send JSON data
+        return {
+          url: "/investment",
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: { name, amount },
+        };
+      },
+      invalidatesTags: [{ type: "Investments", id: "LIST" }],
     }),
     deleteInvestment: builder.mutation<void, string>({
         query: (id: string) => ({
