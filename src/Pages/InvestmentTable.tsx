@@ -56,7 +56,7 @@ export default function InvestmentTable() {
             <Table className="w-full">
               <TableHeader>
                 <TableRow className="bg-gray-100 dark:bg-gray-800">
-                  <TableHead className="p-4"></TableHead>
+                  <TableHead className="h-0 w-0"></TableHead>
                   <TableHead className="p-4">{t("investmentname")}</TableHead>
                   <TableHead className="p-4">{t("amount")} ($)</TableHead>
                   <TableHead className="p-4">{t("roi")} (%)</TableHead>

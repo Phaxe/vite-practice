@@ -21,6 +21,7 @@ i18n.use(initReactI18next).init({
         average_roi: "Average ROI",
         roi_trends: "ROI Trends",
         no_data_available: "no data available",
+        upload_doc:"Upload Document"
       },
     },
     ar: {
@@ -39,6 +40,7 @@ i18n.use(initReactI18next).init({
         average_roi: "متوسط العائد",
         roi_trends: "اتجاه العائد على الأستثمار",
         no_data_available: "لا توجد بيانات",
+            upload_doc:"رفع الملف"
       },
     },
   },

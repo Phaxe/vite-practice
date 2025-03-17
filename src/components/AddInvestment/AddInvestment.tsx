@@ -59,6 +59,14 @@ export default function AddInvestmentModal() {
       console.error("Failed to add investment", error);
     }
   };
+  const handleFileUploadWarning = (e: React.MouseEvent<HTMLInputElement>) => {
+    const userConfirmed = confirm(
+      "Note: The backend does not support file upload at the moment. This is just a mock process."
+    );
+    if (!userConfirmed) {
+      e.preventDefault(); // Prevents the file dialog from opening
+    }
+  };
   
 
   return (
@@ -67,14 +75,14 @@ export default function AddInvestmentModal() {
         <Button className="bg-blue-500 text-white my-10 border-0"> {t("add_investment")} +</Button>
       </DialogTrigger>
       <DialogContent className="max-w-md p-6">
-        <DialogTitle className="text-xl font-bold">
+        <DialogTitle className="text-xl font-bold my-2">
         {t("add_investment")}
         </DialogTitle>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Name Field */}
           <div>
-            <label className="block font-semibold">{t("investmentname")}</label>
+            <label className="block font-semibold my-2">{t("investmentname")}</label>
             <Input {...register("name")} />
             {errors.name && (
               <p className="text-red-500">{errors.name.message}</p>
@@ -83,7 +91,7 @@ export default function AddInvestmentModal() {
 
           {/* Amount Field */}
           <div>
-            <label className="block font-semibold">{t("amount")} ($)</label>
+            <label className="block font-semibold my-2">{t("amount")} ($)</label>
             <Input type="number" {...register("amount")} />
             {errors.amount && (
               <p className="text-red-500">{errors.amount.message}</p>
@@ -92,8 +100,9 @@ export default function AddInvestmentModal() {
 
           {/* File Upload Field */}
           <div>
-            <label className="block font-semibold">Upload Document</label>
+            <label className="block font-semibold my-2">{t("upload_doc")}</label>
             <Input
+            onClick={handleFileUploadWarning}
   type="file"
   accept=".pdf,.docx,.jpg,.png"
   onChange={(e) => setFile(e.target.files?.[0] || null)}

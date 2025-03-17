@@ -18,7 +18,7 @@ export default function DraggableRow({
     <TableRow
       ref={setNodeRef}
       style={{ transform: CSS.Transform.toString(transform), transition }}
-      className="hover:bg-gray-50 dark:hover:bg-gray-900"
+      className="hover:bg-gray-50"
     >
       {/* Drag Handle Icon */}
       <TableCell className="p-4">
